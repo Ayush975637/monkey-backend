@@ -10,7 +10,7 @@ const server = http.createServer(app);
 dotenv.config();
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',  // Use your frontend URL here like "http://localhost:3000" in dev
+    origin: 'https://spider-rho-swart.vercel.app/',  // Use your frontend URL here like "http://localhost:3000" in dev
     methods: ['GET', 'POST'],
     credentials: true,
   }
