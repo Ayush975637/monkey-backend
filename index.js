@@ -3,7 +3,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const { db } = require('../monkey/pri')
+// const { db } = require('../monkey/pri')
 
 const app = express();
 const server = http.createServer(app);
@@ -346,15 +346,15 @@ else{
     const roomId = [receiverId, senderId].sort().join("-");
     try {
       // Save message to Supabase DB via Prisma
-      const message = await db.messageWithFreinds.create({
-        data: {
-          content,
-          type,
-          senderId,
-          receiverId,
+      // const message = await db.messageWithFreinds.create({
+      //   data: {
+      //     content,
+      //     type,
+      //     senderId,
+      //     receiverId,
           
-        },
-      });
+      //   },
+      // });
 
       // Broadcast to all users in room
       io.to(roomId).emit("receiveMessage", {
